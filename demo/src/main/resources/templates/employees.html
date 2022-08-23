@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <p>
+        <span th:text="List of employees"></span>
+        </p>
+      
+      	<div th:if="${ not#lists.isEmpty(employees)}">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+            <tr th:each="employee : ${employees}">
+              <td th:text="$employee.id}"></td>
+              <td th:text="${employee.firstName}"></td>
+              <td th:text="${employee.lastName}"></td>
+            </tr>
+          <table>
+        </div>
+    </body>
+</html>
